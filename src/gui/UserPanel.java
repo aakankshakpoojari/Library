@@ -38,7 +38,6 @@ public class UserPanel extends JPanel {
             User user = users.get(id);
             if (user != null) {
                 user.addIssue("Book-" + System.currentTimeMillis());
-                service.getTransactionStack().logTransaction("User " + id + " issued book");
                 updateDisplay();
             }
         });

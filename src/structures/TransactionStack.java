@@ -1,4 +1,5 @@
 package structures;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -6,25 +7,25 @@ import java.util.Stack;
  * Supports undo by popping the last transaction and providing data to reverse it.
  */
 public class TransactionStack {
-    private Stack<Transaction> history = new Stack<>();
+    private LinkedList<Transaction> history = new LinkedList<>();
     private static final int MAX_HISTORY = 50; // Limit memory usage
     
     public void logTransaction(Transaction transaction) {
         if (transaction != null) {
-            history.push(transaction);
+            history.addLast(transaction);
             // Keep only last 50 transactions
             if (history.size() > MAX_HISTORY) {
-                history.removeElementAt(0);
+                history.removeFirst();
             }
         }
     }
     
     public Transaction undo() {
-        return history.isEmpty() ? null : history.pop();
+        return history.isEmpty() ? null : history.removeLast();
     }
     
     public Transaction peek() {
-        return history.isEmpty() ? null : history.peek();
+        return history.isEmpty() ? null : history.getLast();
     }
     
     public boolean isEmpty() {
@@ -35,10 +36,9 @@ public class TransactionStack {
         return history.size();
     }
     
-    public Stack<Transaction> getHistory() {
-        Stack<Transaction> copy = new Stack<>();
-        copy.addAll(history);
-        return copy;
+    public LinkedList<Transaction> getHistory() {
+        // Return a new LinkedList to prevent external modification
+        return new LinkedList<>(history);
     }
 }
 

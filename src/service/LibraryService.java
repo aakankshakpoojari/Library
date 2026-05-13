@@ -23,7 +23,7 @@ public class LibraryService {
         loadFromFile();
     }
     
-    public static LibraryService getInstance() {
+    public static synchronized LibraryService getInstance() {
         if (instance == null) {
             instance = new LibraryService();
         }

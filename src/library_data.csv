@@ -1,0 +1,17 @@
+ISBN,Title,Author,Category
+F001,Harry Potter 1,JK Rowling,Fiction
+F002,Lord of Rings,Tolkien,Fiction
+T001,Clean Code,Robert Martin,Textbook
+T002,Java: The Complete Reference,Herbert Schildt,Textbook
+F003,1984,George Orwell,Fiction
+F004,Dune,Frank Herbert,Fiction
+T003,Head First Java,Kathy Sierra,Textbook
+T004,Effective Java,Joshua Bloch,Textbook
+F005,The Hobbit,Tolkien,Fiction
+F006,To Kill a Mockingbird,Harper Lee,Fiction
+T005,Design Patterns,Gang of Four,Textbook
+F007,Pride and Prejudice,Jane Austen,Fiction
+T006,Refactoring,Martin Fowler,Textbook
+F008,The Great Gatsby,F. Scott Fitzgerald,Fiction
+T007,Cracking the Coding Interview,Gayle Laakmann,Textbook
+F009,Brave New World,Aldous Huxley,Fiction

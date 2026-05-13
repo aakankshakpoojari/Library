@@ -24,7 +24,7 @@ A Java Swing desktop application for managing books, users, and issue tracking �
 
 ## Project Structure
 
-src/
+src/<br>
 ├── model/       # Abstract Book class; FictionBook, TextBook subclasses<br>
 ├── structures/  # IssueQueue (FIFO), TransactionStack (undo history)<br>
 ├── service/     # LibraryService singleton — business logic + CSV I/O<br>

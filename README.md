@@ -6,6 +6,7 @@ A Java Swing desktop application for managing books, users, and issue tracking �
 
 ## Features
 
+- **Live Search** - The book search functionality now updates results in real-time as you type, eliminating the need to click a search button.
 - **Book Management** — Add, search, and categorize books (Fiction / Textbook) with duplicate ISBN detection and input validation
 - **Issue Queue** — FIFO-based book request processing with per-user borrow limits (max 3 books)
 - **User Management** — Register users, track issued books, and undo recent actions via a transaction history stack

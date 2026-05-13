@@ -5,6 +5,8 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.util.List;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class BookPanel extends JPanel {
     private LibraryService service;
@@ -25,6 +27,7 @@ public class BookPanel extends JPanel {
         
         searchField = new JTextField(25);
         searchField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        
         JButton searchBtn = new JButton("🔍 Search");
         JButton refreshBtn = new JButton("🔄 Refresh All");
         
@@ -32,7 +35,21 @@ public class BookPanel extends JPanel {
         styleButton(searchBtn);
         styleButton(refreshBtn);
         
-        searchBtn.addActionListener(e -> updateTable(searchField.getText()));
+        searchField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateTable(searchField.getText());
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateTable(searchField.getText());
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateTable(searchField.getText());
+            }
+        });
+
         refreshBtn.addActionListener(e -> {
             searchField.setText("");
             updateTable("");
